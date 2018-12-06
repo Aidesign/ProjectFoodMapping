@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ProjectFoodMapping</string>
+    <string name="add_food_input">Add food here</string>
+    <string name="button_send">Send</string>
+    <string name="restaurant_name">RestaurantName</string>
 </resources>
