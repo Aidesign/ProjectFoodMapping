@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 
-class RestaurantFoodListAdapter(private val foodDataset: Array<String>) : RecyclerView.Adapter<RestaurantFoodListAdapter.RestaurantFoodListViewHolder>() {
+class RestaurantFoodListAdapter(private val foodDataset: ArrayList<String>) : RecyclerView.Adapter<RestaurantFoodListAdapter.RestaurantFoodListViewHolder>() {
 
     class RestaurantFoodListViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
 

@@ -1,5 +1,6 @@
 package com.example.kimmo.projectfoodmapping
 
+import android.arch.persistence.room.Room
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -19,7 +20,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val foodDataset = arrayOf("Ramen", "Oyakodon")
+        val db = AppDatabase.getDatabase(applicationContext)
+        val foods = db.foodDAO().getAll()
+        var foodDataset = ArrayList<String>()
+        for(food in foods){
+            foodDataset.add(food.name)
+        }
 
         viewManager = LinearLayoutManager(this)
         viewAdapter = RestaurantFoodListAdapter(foodDataset)
