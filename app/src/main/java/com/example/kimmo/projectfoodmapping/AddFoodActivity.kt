@@ -1,7 +1,9 @@
 package com.example.kimmo.projectfoodmapping
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
@@ -20,5 +22,12 @@ class AddFoodActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.time_value).apply {
             text = ZonedDateTime.now().format(formatter).toString()
         }
+    }
+
+    fun saveFood(view: View){
+        val intent = Intent(this, MainActivity::class.java).apply {
+
+        }
+        startActivity(intent)
     }
 }

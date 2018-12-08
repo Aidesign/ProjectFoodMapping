@@ -19,4 +19,5 @@
     <string name="food_comment_hint">Add comment</string>
     <string name="type_label">Type:</string>
     <string name="type_input_hint">Add type</string>
+    <string name="save_button_text">Save</string>
 </resources>
