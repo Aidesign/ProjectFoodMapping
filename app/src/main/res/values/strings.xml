@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">ProjectFoodMapping</string>
     <string name="add_food_input">Add food here</string>
-    <string name="button_send">Send</string>
+    <string name="button_add">Add</string>
     <string name="restaurant_name">RestaurantName</string>
+    <string name="add_food_title">Adding:</string>
+    <string name="food_rating_1_text">1</string>
+    <string name="food_rating_text_2">2</string>
+    <string name="food_rating_text_3">3</string>
+    <string name="food_rating_text_4">4</string>
+    <string name="food_rating_text_5">5</string>
+    <string name="rating_lable">Rating:</string>
+    <string name="food_name">FoodNameMissing</string>
+    <string name="time_label">Timestamp:</string>
+    <string name="time_value">TimeHere</string>
 </resources>
