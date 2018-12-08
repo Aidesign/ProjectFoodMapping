@@ -13,4 +13,10 @@
     <string name="food_name">FoodNameMissing</string>
     <string name="time_label">Timestamp:</string>
     <string name="time_value">TimeHere</string>
+    <string name="comment_label">Comment:</string>
+    <string name="price_label">Price:</string>
+    <string name="price_input_hint">Add price</string>
+    <string name="food_comment_hint">Add comment</string>
+    <string name="type_label">Type:</string>
+    <string name="type_input_hint">Add type</string>
 </resources>
