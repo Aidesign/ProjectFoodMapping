@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import java.math.BigDecimal
@@ -33,7 +34,8 @@ class AddFoodActivity : AppCompatActivity() {
 
     fun getFood(): Food {
         val name = findViewById<TextView>(R.id.foodName).text.toString()
-        val ratingId = findViewById<RadioGroup>(R.id.food_rating_radio_group).checkedRadioButtonId
+        val checkedRadioButtonId = findViewById<RadioGroup>(R.id.food_rating_radio_group).checkedRadioButtonId
+        val ratingId = findViewById<RadioButton>(checkedRadioButtonId).text.toString().toInt()
         val comment = findViewById<EditText>(R.id.comment_edit_text).text.toString()
         val price = findViewById<TextView>(R.id.price_input_field).text.toString().toDouble()
         val type = findViewById<TextView>(R.id.type_input_field).text.toString()
