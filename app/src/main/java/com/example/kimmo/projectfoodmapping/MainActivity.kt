@@ -1,6 +1,5 @@
 package com.example.kimmo.projectfoodmapping
 
-import android.arch.persistence.room.Room
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -22,13 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         val db = AppDatabase.getDatabase(applicationContext)
         val foods = db.foodDAO().getAll()
-        var foodDataset = ArrayList<String>()
-        for(food in foods){
-            foodDataset.add(food.name)
-        }
-
+        
         viewManager = LinearLayoutManager(this)
-        viewAdapter = RestaurantFoodListAdapter(foodDataset)
+        viewAdapter = RestaurantFoodListAdapter(foods)
 
         recyclerView = findViewById<RecyclerView>(R.id.restaurant_food_recycler_view).apply {
             setHasFixedSize(true)
