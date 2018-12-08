@@ -20,21 +20,27 @@
         android:id="@+id/food_timestamp_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="price"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/food_ranking_field"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/food_ranking_field"
-        android:layout_width="wrap_content"
+    <RatingBar
+        android:id="@+id/food_rating_list_star"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="178dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="ranking"
-        android:textSize="18sp"
+        android:layout_marginTop="12dp"
+        android:clickable="false"
+        android:isIndicator="true"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:transformPivotX="0dp"
+        android:translationY="6dp"
         app:layout_constraintStart_toEndOf="@+id/food_name_field"
         app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
