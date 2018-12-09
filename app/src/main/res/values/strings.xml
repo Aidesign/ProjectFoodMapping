@@ -20,4 +20,12 @@
     <string name="type_label">Type:</string>
     <string name="type_input_hint">Add type</string>
     <string name="save_button_text">Save</string>
+    <string name="add_restaurant_hint">Add restaurant name</string>
+    <string name="restaurant_name_value">RestaurantNameMissing</string>
+    <string name="restaurant_country_label">Country:</string>
+    <string name="restaurant_city_label">City:</string>
+    <string name="restaurant_address_label">Address:</string>
+    <string name="restaurant_country_hint">Add country</string>
+    <string name="restaurant_city_hint">Add city</string>
+    <string name="restaurant_address_hint">Add address</string>
 </resources>
