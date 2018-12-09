@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.EditText
 import com.example.kimmo.projectfoodmapping.R
 import com.example.kimmo.projectfoodmapping.adapters.RestaurantFoodListAdapter
 import com.example.kimmo.projectfoodmapping.persistence.config.AppDatabase
+import kotlinx.android.synthetic.main.activity_restaurant.*
 
 const val EXTRA_FOOD_NAME = "com.example.kimmo.projectfoodmapping.FOOD_NAME"
 
@@ -23,12 +23,16 @@ class RestaurantActivity : AppCompatActivity() {
         setContentView(R.layout.activity_restaurant)
 
         val db = AppDatabase.getDatabase(applicationContext)
-        val foods = db.foodDAO().getAll()
+
+        val restaurant = db.restaurantDAO().getRestaurantById(intent.getStringExtra(EXTRA_RESTAURANT_ID))
+        restaurant_activity_restaurant_name.setText(restaurant.name)
+
+        val foods = db.foodDAO().getAllForRestaurantId(intent.getStringExtra(EXTRA_RESTAURANT_ID))
 
         viewManager = LinearLayoutManager(this)
         viewAdapter = RestaurantFoodListAdapter(foods)
 
-        recyclerView = findViewById<RecyclerView>(R.id.restaurant_food_recycler_view).apply {
+        recyclerView = restaurant_food_recycler_view.apply {
             setHasFixedSize(true)
             layoutManager = viewManager
             adapter = viewAdapter
@@ -36,10 +40,11 @@ class RestaurantActivity : AppCompatActivity() {
     }
 
     fun addFood(view: View) {
-        val editText = findViewById<EditText>(R.id.editText)
+        val editText = restaurant_acitivity_food_name_input
         val message = editText.text.toString()
         val intent = Intent(this, AddFoodActivity::class.java).apply {
             putExtra(EXTRA_FOOD_NAME, message)
+            putExtra(EXTRA_RESTAURANT_ID, intent.getStringExtra(EXTRA_RESTAURANT_ID))
         }
         startActivity(intent)
     }

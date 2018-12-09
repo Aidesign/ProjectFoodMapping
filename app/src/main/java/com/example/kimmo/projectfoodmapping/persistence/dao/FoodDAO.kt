@@ -7,8 +7,8 @@ import com.example.kimmo.projectfoodmapping.persistence.entities.Food
 
 @Dao
 interface FoodDAO {
-    @Query("SELECT * FROM food")
-    fun getAll(): List<Food>
+    @Query("SELECT * FROM food where restaurant_id=:restaurantId")
+    fun getAllForRestaurantId(restaurantId: String): List<Food>
 
     @Insert
     fun insertFood(food: Food)
