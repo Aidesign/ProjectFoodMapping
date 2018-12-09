@@ -1,4 +1,4 @@
-package com.example.kimmo.projectfoodmapping
+package com.example.kimmo.projectfoodmapping.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -8,7 +8,9 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import java.math.BigDecimal
+import com.example.kimmo.projectfoodmapping.R
+import com.example.kimmo.projectfoodmapping.persistence.config.AppDatabase
+import com.example.kimmo.projectfoodmapping.persistence.entities.Food
 
 class AddFoodActivity : AppCompatActivity() {
 

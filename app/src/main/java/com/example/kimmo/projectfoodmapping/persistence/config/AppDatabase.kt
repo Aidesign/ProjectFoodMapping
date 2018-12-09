@@ -1,7 +1,9 @@
-package com.example.kimmo.projectfoodmapping
+package com.example.kimmo.projectfoodmapping.persistence.config
 
 import android.arch.persistence.room.*
 import android.content.Context
+import com.example.kimmo.projectfoodmapping.persistence.dao.FoodDAO
+import com.example.kimmo.projectfoodmapping.persistence.entities.Food
 
 @Database(entities = arrayOf(Food::class), version = 1)
 @TypeConverters(Converters::class)

@@ -1,4 +1,4 @@
-package com.example.kimmo.projectfoodmapping
+package com.example.kimmo.projectfoodmapping.persistence.config
 
 import android.arch.persistence.room.TypeConverter
 import java.time.Instant

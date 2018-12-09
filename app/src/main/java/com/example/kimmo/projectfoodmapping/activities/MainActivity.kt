@@ -1,4 +1,4 @@
-package com.example.kimmo.projectfoodmapping
+package com.example.kimmo.projectfoodmapping.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -7,6 +7,9 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.EditText
+import com.example.kimmo.projectfoodmapping.R
+import com.example.kimmo.projectfoodmapping.adapters.RestaurantFoodListAdapter
+import com.example.kimmo.projectfoodmapping.persistence.config.AppDatabase
 
 const val EXTRA_FOOD_NAME = "com.example.kimmo.projectfoodmapping.FOOD_NAME"
 
