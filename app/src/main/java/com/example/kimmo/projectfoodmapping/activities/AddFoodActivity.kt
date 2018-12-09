@@ -28,8 +28,8 @@ class AddFoodActivity : AppCompatActivity() {
         val food = getFood()
         val db = AppDatabase.getDatabase(applicationContext)
         db.foodDAO().insertFood(food)
-        val intent = Intent(this, MainActivity::class.java).apply {
-
+        val intent = Intent(this, RestaurantActivity::class.java).apply {
+            putExtra(EXTRA_RESTAURANT_ID, intent.getStringExtra(EXTRA_RESTAURANT_ID))
         }
         startActivity(intent)
     }
@@ -39,9 +39,10 @@ class AddFoodActivity : AppCompatActivity() {
         val checkedRadioButtonId = findViewById<RadioGroup>(R.id.food_rating_radio_group).checkedRadioButtonId
         val ratingId = findViewById<RadioButton>(checkedRadioButtonId).text.toString().toInt()
         val comment = findViewById<EditText>(R.id.comment_edit_text).text.toString()
-        val price = findViewById<TextView>(R.id.price_input_field).text.toString().toDouble()
-        val type = findViewById<TextView>(R.id.type_input_field).text.toString()
-        return Food(name = name, rating = ratingId, comment = comment, price = price, type = type)
+        val price = findViewById<EditText>(R.id.price_input_field).text.toString().toDouble()
+        val type = findViewById<EditText>(R.id.type_input_field).text.toString()
+        return Food(name = name, rating = ratingId, comment = comment, price = price, type = type, restaurantId = intent.getStringExtra(
+            EXTRA_RESTAURANT_ID))
     }
 
 }
