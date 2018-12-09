@@ -4,8 +4,9 @@ import android.arch.persistence.room.*
 import android.content.Context
 import com.example.kimmo.projectfoodmapping.persistence.dao.FoodDAO
 import com.example.kimmo.projectfoodmapping.persistence.entities.Food
+import com.example.kimmo.projectfoodmapping.persistence.entities.Restaurant
 
-@Database(entities = arrayOf(Food::class), version = 1)
+@Database(entities = arrayOf(Restaurant::class, Food::class), version = 1)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun foodDAO(): FoodDAO
