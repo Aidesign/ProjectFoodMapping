@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val message = editText.text.toString()
         val intent = Intent(this, AddRestaurantActivity::class.java).apply {
             putExtra(EXTRA_RESTAURANT_NAME, message)
-        }
+    }
         startActivity(intent)
     }
 

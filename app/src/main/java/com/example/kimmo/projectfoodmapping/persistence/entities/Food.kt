@@ -7,15 +7,19 @@ import android.arch.persistence.room.PrimaryKey
 import java.time.Instant
 import java.util.*
 
-@Entity(tableName = "food",
-        foreignKeys = arrayOf(ForeignKey(
-            entity = Restaurant::class,
-            parentColumns = arrayOf("id"),
-            childColumns = arrayOf("restaurant_id")
-        )
-    )
+@Entity(
+    tableName = "food",
+    foreignKeys = [ForeignKey(
+        entity = Restaurant::class,
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("restaurant_id")
+    ), ForeignKey(
+        entity = FoodType::class,
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("type")
+    )]
 )
-data class Food (
+data class Food(
     @PrimaryKey @ColumnInfo(name = "id") var id: String = UUID.randomUUID().toString(),
     @ColumnInfo(name = "name") var name: String,
     @ColumnInfo(name = "rating") var rating: Int,
