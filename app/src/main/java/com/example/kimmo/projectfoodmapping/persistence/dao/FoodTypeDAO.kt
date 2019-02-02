@@ -10,7 +10,7 @@ interface FoodTypeDAO {
     @Query("SELECT * FROM foodType" )
     fun getAll(): List<FoodType>
 
-    @Query("SELECT * FROM foodType where id=:foodId")
+    @Query("SELECT * FROM foodType where id=:id")
     fun getFoodTypeByFoodId(id: String): FoodType
 
     @Insert
