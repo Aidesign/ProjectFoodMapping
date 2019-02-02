@@ -3,6 +3,7 @@ package com.example.kimmo.projectfoodmapping.persistence.config
 import android.arch.persistence.room.*
 import android.content.Context
 import com.example.kimmo.projectfoodmapping.persistence.dao.FoodDAO
+import com.example.kimmo.projectfoodmapping.persistence.dao.FoodTypeDAO
 import com.example.kimmo.projectfoodmapping.persistence.dao.RestaurantDAO
 import com.example.kimmo.projectfoodmapping.persistence.entities.Food
 import com.example.kimmo.projectfoodmapping.persistence.entities.FoodType
@@ -13,6 +14,7 @@ import com.example.kimmo.projectfoodmapping.persistence.entities.Restaurant
 abstract class AppDatabase : RoomDatabase() {
     abstract fun foodDAO(): FoodDAO
     abstract fun restaurantDAO(): RestaurantDAO
+    abstract fun foodTypeDAO(): FoodTypeDAO
 
     companion object {
         @Volatile
