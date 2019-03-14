@@ -9,6 +9,7 @@ import android.view.View
 import com.example.kimmo.projectfoodmapping.R
 import com.example.kimmo.projectfoodmapping.adapters.FoodTypeListAdapter
 import com.example.kimmo.projectfoodmapping.persistence.config.AppDatabase
+import com.example.kimmo.projectfoodmapping.persistence.entities.Food
 import com.example.kimmo.projectfoodmapping.persistence.entities.FoodType
 import kotlinx.android.synthetic.main.activity_food_type.*
 
@@ -39,8 +40,14 @@ class FoodTypeActivity : AppCompatActivity() {
 
     fun saveFoodType(view: View) {
         val db = AppDatabase.getDatabase(applicationContext)
-        val foodType = FoodType(type = add_food_type_input.text.toString())
-        db.foodTypeDAO().insertFoodType(foodType)
+        val existingFoodType: FoodType? = db.foodTypeDAO().getFoodTypeByFoodType(add_food_type_input.text.toString())
+        val foodType: FoodType
+        if(existingFoodType != null) {
+            foodType = existingFoodType
+        } else {
+            foodType = FoodType(type = add_food_type_input.text.toString())
+            db.foodTypeDAO().insertFoodType(foodType)
+        }
         val intent = getIntent()
         intent.putExtra(EXTRA_FOOD_TYPE, foodType.type)
         intent.putExtra(EXTRA_FOOD_TYPE_ID, foodType.id)
