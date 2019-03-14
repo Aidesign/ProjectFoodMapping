@@ -16,7 +16,7 @@ import java.util.*
     ), ForeignKey(
         entity = FoodType::class,
         parentColumns = arrayOf("id"),
-        childColumns = arrayOf("type")
+        childColumns = arrayOf("type_id")
     )]
 )
 data class Food(
@@ -26,6 +26,6 @@ data class Food(
     @ColumnInfo(name = "timestamp") var timestamp: Instant = Instant.now(),
     @ColumnInfo(name = "comment") var comment: String?,
     @ColumnInfo(name = "price") var price: Double,
-    @ColumnInfo(name = "type") var type: String,
+    @ColumnInfo(name = "type_id") var typeId: String,
     @ColumnInfo(name = "restaurant_id") var restaurantId: String
 )

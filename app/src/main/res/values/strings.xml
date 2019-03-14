@@ -29,4 +29,9 @@
     <string name="restaurant_city_hint">Add city</string>
     <string name="restaurant_address_hint">Add address</string>
     <string name="add_comma_to_string">%1$s,</string>
+    <string name="button_go">Go</string>
+    <string name="search_restaurant_input_hint">Search for restaurant</string>
+    <string name="food_type_filter">Filter food types</string>
+    <string name="add_food_type_hint">Add food type</string>
+    <string name="button_text_pick">Pick</string>
 </resources>
