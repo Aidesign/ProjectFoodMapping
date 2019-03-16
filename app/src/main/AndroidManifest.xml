@@ -21,7 +21,7 @@
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.RestaurantActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.AddRestaurantActivity"
@@ -38,11 +38,7 @@
                 android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".activities.FoodTypeActivity"
-            android:parentActivityName=".activities.AddFoodActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.AddFoodActivity" />
+            android:name=".activities.FoodTypeActivity">
         </activity>
     </application>
 
